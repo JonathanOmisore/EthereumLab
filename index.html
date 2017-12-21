@@ -104,8 +104,9 @@
             if(!error)
                 {
                     $("#instructor").html(result[0]+' ('+result[1]+' years old)');
-                    console.log(result[0]);
-	            console.log(result[0]["c"]);
+                    var test = new BigNumber(result);
+		    console.log(test)
+
 
                 }
             else
