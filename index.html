@@ -86,6 +86,7 @@
             else
                 console.error(error);
         });
+        var Coursetro = CoursetroContract.at('0x737ff4a8e8e6768d661bcf9b1a88097d28313032');
 
         $("#button").click(function() {
             Coursetro.setInstructor($("#name").val(), $("#age").val());
