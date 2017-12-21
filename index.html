@@ -102,7 +102,9 @@
             if(!error)
                 {
                     $("#instructor").html(result[0]+' ('+result[1]+' years old)');
-                    console.log(result);
+                    console.log(result[0]);
+	            console.log(result[0]["c"]);
+
                 }
             else
                 console.error(error);
