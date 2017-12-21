@@ -42,13 +42,32 @@
         var contract = web3.eth.contract([
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "getInstructor",
-		"outputs": [
+		"inputs": [
 			{
 				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "messages",
+		"outputs": [
+			{
+				"name": "name",
 				"type": "string"
 			},
+			{
+				"name": "message",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getMessages",
+		"outputs": [
 			{
 				"name": "",
 				"type": "uint256"
@@ -62,24 +81,24 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "_fName",
+				"name": "_name",
 				"type": "string"
 			},
 			{
-				"name": "_age",
-				"type": "uint256"
+				"name": "_message",
+				"type": "string"
 			}
 		],
-		"name": "setInstructor",
+		"name": "postMessage",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]);
-	            var Coursetro = contract.at('0x737ff4a8e8e6768d661bcf9b1a88097d28313032');
+	            var BulletinBoardContract = contract.at('0xabed69286fac87f9d134c754bbe8711eedd2d2d1');
 
-        Coursetro.getInstructor(function(error, result){
+        BulletinBoardContract.getMessages(function(error, result){
             if(!error)
                 {
                     $("#instructor").html(result[0]+' ('+result[1]+' years old)');
@@ -89,12 +108,12 @@
                 console.error(error);
         });
 
-        $("#button").click(function() {
-            Coursetro.setInstructor($("#name").val(), $("#age").val(),function(){
+//         $("#button").click(function() {
+//             Coursetro.setInstructor($("#name").val(), $("#age").val(),function(){
 		    
 		    
 		    
-	    });
+// 	    });
         });
 
 
