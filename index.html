@@ -56,10 +56,6 @@
 			{
 				"name": "",
 				"type": "string"
-			},
-			{
-				"name": "",
-				"type": "string"
 			}
 		],
 		"payable": false,
@@ -70,11 +66,7 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"name": "message",
+				"name": "_message",
 				"type": "string"
 			}
 		],
@@ -85,7 +77,7 @@
 		"type": "function"
 	}
 ]);
-	            var BulletinBoardContract = contract.at('0x7e69f125e17EE96ca15aF40e837aFC463e4E48Ef');
+	            var BulletinBoardContract = contract.at('0x6229dcff9788D7DB6eE494c679ace6d15b54E556');
 
 //         BulletinBoardContract.getMessages(function(error, result){
 //             if(!error)
@@ -99,7 +91,7 @@
 //                 console.error(error);
 //         });
        $("#button").click(function() {
-            BulletinBoardContract.setMessage($("#name").val(), $("#message").val(),function(){
+            BulletinBoardContract.setMessage($("#message").val(),function(){
 		    
 		    
 		    
