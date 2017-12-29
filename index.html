@@ -98,11 +98,7 @@
 	    });
        });
 	        $("#button2").click(function() {
-            BulletinBoardContract.getMessage(0,function(result){
-		    console.log(result[0]);
-		    
-		    
-	    });
+            BulletinBoardContract.methods.getMessage(0).call().then(console.log);
 		});
 
     </script>
