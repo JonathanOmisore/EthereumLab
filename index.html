@@ -98,7 +98,10 @@
 	    });
        });
 	        $("#button2").click(function() {
-            BulletinBoardContract.getMessage.call(0,function(){}).then(console.log);
+			        BulletinBoardContract.getMessage.call(0).then(function (stringReturned) {
+					console.log(stringReturned);
+
+		});
 		});
 
     </script>
